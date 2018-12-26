@@ -1,6 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { Fielding } from './dto/fielding.dto';
 import { FieldingOF } from './dto/fieldingOF.dto';
+import { FieldingOFSpilt } from './dto/fieldingOFSplits.dto';
 import { FieldingPost } from './dto/fieldingPost.dto';
 
 @Injectable()
@@ -29,4 +30,11 @@ export class FieldingService {
         return FieldingOF.findAll({ where: { playerID : id, yearID: season }, order: [ [ 'stint', 'DESC' ]] });
     }
 
+    async getCareerOFSplitsById(id: string): Promise<any> {
+        return FieldingOFSpilt.findAll({ where: { playerID : id }, order: [ ['yearID', 'DESC'],  [ 'stint', 'DESC' ]] , limit: 35});
+    }
+
+    async getOFSplitsByIdAndSeason(id: string, season: number): Promise<any> {
+        return FieldingOFSpilt.findAll({ where: { playerID : id, yearID: season }, order: [ [ 'stint', 'DESC' ]] });
+    }
 }

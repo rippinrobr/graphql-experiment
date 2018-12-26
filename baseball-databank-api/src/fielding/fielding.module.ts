@@ -3,9 +3,10 @@ import { FieldingController } from './Fielding.controller';
 import { FieldingPostController } from './FieldingPost.controller';
 import { FieldingService } from './Fielding.service';
 import {FieldingOFController} from './fieldingOF.controller';
+import {FieldingOFSplitsController} from './fieldingOFSplits.controller';
 
 @Module({
-  controllers: [FieldingController, FieldingOFController, FieldingPostController],
+  controllers: [FieldingController, FieldingOFController, FieldingOFSplitsController, FieldingPostController],
   providers: [FieldingService],
 })
 
