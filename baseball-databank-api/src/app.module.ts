@@ -4,12 +4,9 @@ import { FranchisesModule } from './franchises/franchises.module';
 import { ManagersModule } from './managers/managers.module';
 import { SeasonsModule } from './seasons/seasons.module';
 import { BattingModule } from './batting/batting.module';
-import { FieldingService } from './fielding/fielding.service';
-import { FieldingController } from './fielding/fielding.controller';
+import { FieldingModule } from './fielding/fielding.module';
 
 @Module({
-    imports: [PlayersModule, FranchisesModule, ManagersModule, SeasonsModule, BattingModule],
-    providers: [FieldingService],
-    controllers: [FieldingController],
+    imports: [PlayersModule, FieldingModule, FranchisesModule, ManagersModule, SeasonsModule, BattingModule],
 })
 export class ApplicationModule {}
