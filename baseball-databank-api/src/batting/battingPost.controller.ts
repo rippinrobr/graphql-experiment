@@ -7,14 +7,14 @@ export class BattingPostController {
 
     @Get(':id')
     findAll(@Param('id') id): any {
-        return this.battingService.getCareerPostSeasonBattingStatsById(id).then((stats) => {
+        return this.battingService.getCareerPostSeasonStatsById(id).then((stats) => {
             return {results: stats};
         });
     }
 
     @Get(':id/:season')
     findOne(@Param('id') id, @Param('season') season): any {
-        return this.battingService.getPostSeasonBattingStatsByIdAndSeason(id, season).then((stats) => {
+        return this.battingService.getPostSeasonStatsByIdAndSeason(id, season).then((stats) => {
             return {results: stats};
         });
     }
